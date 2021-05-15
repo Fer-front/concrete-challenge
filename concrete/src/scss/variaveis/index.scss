@@ -1,0 +1,17 @@
+$axis: 'x', 'y';
+$sizes: (1: 8px, 2: 13px, 3: 21px, 4: 34px, 5: 55px );
+$directions-margin: ('t': 'margin-top', 'b': 'margin-bottom', 'l': 'margin-left', 'r': 'margin-right');
+$directions-padding: ('t': 'padding-top', 'b': 'padding-bottom', 'l': 'padding-left', 'r': 'padding-right');
+
+$color-primary: #151936;
+$color-secundary: #6273F6;
+$color-font-primary: #A7A8F3;
+$color-gray: rgb(190, 190, 190) ;
+
+$color-success: #189713;
+$color-error: #ca5656;
+$color-alert: #c2d119;
+$color-alert: #1d97c7;
+
+
+$gradiente-avatar: linear-gradient(300deg, rgba(47,38,195,1) 0%, rgba(62,62,167,1) 35%, rgba(5,185,142,1) 66%, rgba(0,212,255,1) 100%);

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+@mixin generateFontSize ($small, $medium, $large) {
+    &--small {
+        font-size: $small;
+    }
+    &--medium {
+        font-size: $medium;
+    }
+    &--large {
+        font-size: $large;
+    }
+}
+
+h1, h2, h3, h4, small, span, p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.titulo {
+    font-size: 32px;
+    font-weight: 700;
+
+    @include generateFontSize(24px, 44px, 56px);
+}
+
+.sub-titulo {
+    font-size: 18px;
+    font-weight: 700;
+
+    @include generateFontSize(14px, 20px, 22px);
+}
+
+.font {
+    &--bold {
+        font-weight: 700;
+    }
+    &--light {
+        font-weight: 300;
+    }
+    &--italic {
+        font-style: italic;
+    }
+}
+
+

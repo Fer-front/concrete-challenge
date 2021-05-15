@@ -1,0 +1,29 @@
+.p {
+    @each $size, $size-value in $sizes {
+        
+        @each $direct, $prop-value in $directions-padding {
+            &#{$direct}-#{$size} {
+               #{$prop-value}: $size-value;   
+            }
+        } 
+
+    }
+}
+
+.p {
+    @each $size, $size-value in $sizes {
+        
+        @each $direct in $axis {
+            &#{$direct}-#{$size} {
+                @if $direct == 'x' {
+                    padding-top: $size-value;
+                    padding-bottom: $size-value;
+                } @else {
+                    padding-left: $size-value;
+                    padding-right: $size-value;
+                }
+               
+            }
+        } 
+    }
+}

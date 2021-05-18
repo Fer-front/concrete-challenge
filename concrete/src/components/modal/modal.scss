@@ -1,0 +1,33 @@
+@import '../../scss/variaveis/';
+
+.Modal {
+    position: absolute;
+    min-width: 450px;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid $color-gray;
+
+    &--large {
+        width: 900px;
+    }
+
+    &--full {
+        position: fixed;
+        width: 90vw;
+        height: 90vh;
+        top: 20px;
+    }
+
+    & .header {
+        border-bottom: 1px solid $color-gray;
+
+        &__close {
+            color: red;
+        }
+    }
+    & .body {}
+
+    & .footer {
+        border-top: 1px solid $color-gray;
+    }
+}

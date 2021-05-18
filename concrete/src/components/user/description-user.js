@@ -1,8 +1,6 @@
+import './description-user.scss'
+
 function descriptionUser(props) {
-    // props: data
-
-    console.log('valor data descriptionUser ===>', props.data)
-
     return (
         <article className="description-user d-flex mb-5">
             <figure className="description-user__thumb mr-4">
@@ -25,7 +23,7 @@ function descriptionUser(props) {
                     </p>
                 </div>
 
-                <div className="description-user__content-links d-flex ">
+                <div className="description-user__content-links d-flex flex-wrap ">
                     <div className="description-user__link mr-5 d-flex align-items-center">
                         <a href="/">Perfil</a>
                     </div>

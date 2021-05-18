@@ -1,0 +1,70 @@
+@mixin generateStyleBtn($bgcolor, $bgcolorhover, $borderColor, $sizeBorder, $textColor) {
+    background-color: $bgcolor;
+    border:$sizeBorder solid $borderColor;
+    color: $textColor;
+
+    &:hover {
+        background-color: $bgcolorhover;
+        color: darken($textColor, 10%);
+        border: $sizeBorder solid darken($borderColor, 10%);
+    }
+}
+
+.g-btn {
+    width: 150px;
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 800;
+
+    &:hover {
+        background-color: $color-gray;
+        color: white;
+    }
+
+    &__outline {
+        &--primary {
+            @include generateStyleBtn(transparent, unset, $color-primary, 2px, $color-primary);
+        }
+        &--success {
+            @include generateStyleBtn(unset, unset, $color-success, 2px, $color-success);
+        }
+        &--error {
+            @include generateStyleBtn(unset, unset, $color-error, 2px, $color-error);
+        }
+        &--infor {
+            @include generateStyleBtn(unset, unset, $color-infor, 2px, $color-infor);
+        }
+        &--alert {
+            @include generateStyleBtn(unset, unset, $color-alert, 2px, $color-alert);
+        }
+        &--disabled {
+            @include generateStyleBtn(unset, unset, $color-gray, 2px, $color-gray);
+            cursor: not-allowed !important;
+        }
+    }
+
+    &--primary {
+        @include generateStyleBtn($color-primary, lighten($color: $color-primary, $amount: 10), white, none, white);
+    }
+    &--success {
+        @include generateStyleBtn($color-success, lighten($color: $color-success, $amount: 10), white, none, white);
+    }
+    &--error {
+        @include generateStyleBtn($color-error, $color-error, transparent, transparent, white);
+    }
+    &--infor {
+        @include generateStyleBtn($color-infor, $color-infor, transparent, transparent, white);
+    }
+    &--alert {
+        @include generateStyleBtn($color-alert, $color-alert, transparent, transparent, white);
+    }
+
+    &--disabled {
+        background-color: lighten($color: $color-gray, $amount: 10) !important;
+        color: white !important;
+        cursor: not-allowed !important;
+    }
+}

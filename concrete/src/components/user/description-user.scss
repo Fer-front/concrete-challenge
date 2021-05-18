@@ -1,0 +1,46 @@
+@import '../../scss/variaveis/index.scss';
+
+.description-user {
+    &__thumb {
+        position: relative;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        z-index: 10;
+        
+        &::before {
+            position: absolute;
+            content: '';
+            width: 61px;
+            height: 61px;
+            padding: 15px;
+            border-radius: 50px;
+            background: $gradiente-avatar;
+            z-index: 0;
+            left: -3px;
+            top: -3px;
+        }
+    }
+    &__thumb-img {
+        position: relative;
+        overflow: hidden;
+        border-radius: inherit;
+        outline: none;
+        width: 55px;
+        height: 55px;
+        object-fit: cover;
+        background-color: $color-gray;
+        
+    }
+
+    &__content-user{
+        &-name {}
+        &-email {}
+    }
+
+    &__content-bio {
+
+    }
+
+    &__content-links {}
+}

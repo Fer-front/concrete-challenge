@@ -1,29 +1,29 @@
-.m {
-    @each $size, $size-value in $sizes {
+// .m {
+//     @each $size, $size-value in $sizes {
         
-        @each $direct, $prop-value in $directions-margin {
-            &#{$direct}-#{$size} {
-               #{$prop-value}: $size-value;   
-            }
-        } 
+//         @each $direct, $prop-value in $directions-margin {
+//             &#{$direct}-#{$size} {
+//                #{$prop-value}: $size-value;   
+//             }
+//         } 
         
-    }
-}
+//     }
+// }
 
-.m {
-    @each $size, $size-value in $sizes {
+// .m {
+//     @each $size, $size-value in $sizes {
         
-        @each $direct in $axis {
-            &#{$direct}-#{$size} {
-                @if $direct == 'x' {
-                    margin-top: $size-value;
-                    margin-bottom: $size-value;
-                } @else {
-                    margin-left: $size-value;
-                    margin-right: $size-value;
-                }
+//         @each $direct in $axis {
+//             &#{$direct}-#{$size} {
+//                 @if $direct == 'x' {
+//                     margin-top: $size-value;
+//                     margin-bottom: $size-value;
+//                 } @else {
+//                     margin-left: $size-value;
+//                     margin-right: $size-value;
+//                 }
                
-            }
-        } 
-    }
-}
+//             }
+//         } 
+//     }
+// }

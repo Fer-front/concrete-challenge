@@ -1,0 +1,11 @@
+.home {
+    &__icon-github { 
+        > img {
+            max-width: 150px;
+        }
+    }
+    &__input-search{
+        outline: none;
+        outline-color: green;
+    }
+}

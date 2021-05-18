@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 
-import handleResponse from '../repositories/handleResponse'
+import handleResponse from '../../utils/handleResponse'
 
 
 const gitHub = axios.create({
@@ -19,8 +19,8 @@ gitHub.interceptors.request.use(async (config) => {
 })
 
 gitHub.interceptors.response.use(
-    (res) => ( console.log('interceptor success ===> ', handleResponse(res))),
-    (error) => ( console.log('interceptor error ===> ', handleResponse(error.response)))
+    (res) => (handleResponse(res)),
+    (error) => (handleResponse(error.response))
 )
 
 export default gitHub

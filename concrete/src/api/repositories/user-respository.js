@@ -4,6 +4,7 @@ import github from './github-config'
 // LISTA Repositórios de um usuário: [https://api.github.com/users/{username}/repos](https://api.github.com/users/{username}/repos)
 // Detalhes de um repositório: [https://api.github.com/repos/{full_name}](https://api.github.com/repos/{full_name})
 
+
 // USER
 // --------------------------------------------------------
 const getDetail = (userName = '', config = {}) => (github.get(`/users/${userName}`, config))
@@ -15,11 +16,10 @@ const listRepositorys = (username = '', config = {}) => (github.get(`users/${use
 const getRepository = (responsityName = '', config = {}) => (github.get(`/repos/${responsityName}`, config)) 
 
 
-export default {
+const USER = {
     getDetail,
     listRepositorys,
     getRepository,
 }
 
-
-
+export default USER

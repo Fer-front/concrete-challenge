@@ -1,49 +1,48 @@
 function descriptionUser(props) {
     // props: data
 
-    const { data } = props
+    console.log('valor data descriptionUser ===>', props.data)
 
     return (
         <article className="description-user d-flex mb-5">
             <figure className="description-user__thumb mr-4">
-                <img src={data.user.avatar} alt="" className="description-user__thumb-img" />
+                <img src={props.data.user.avatar} alt="avatar" className="description-user__thumb-img" />
             </figure>
 
             <div className="description-user__content">
                 <header className="description-user__content-user">
                     <h2 className="description-user__content-user-name titulo titulo--small text-uppercase">
-                        {data.user.nickName}
+                        {props.data.user.nickName}
                     </h2>
                     <span className="description-user__content-user-email pb-4">
-                        {data.user.email}
+                        {props.data.user.email}
                     </span>
                 </header>
 
                 <div className="description-user__content-bio">
                     <p className="description-user__bio font--light font--error">
-                        {data.user.bio}
+                        {props.data.user.bio}
                     </p>
                 </div>
 
                 <div className="description-user__content-links d-flex ">
                     <div className="description-user__link mr-5 d-flex align-items-center">
                         <a href="/">Perfil</a>
-                        <span className="badge badge-success ml-2">100</span>
                     </div>
 
                     <div className="description-user__link mr-5 d-flex align-items-center">
                         <a href="/">Repositório</a>
-                        <span className="badge badge-success ml-2">{data.respository.total}</span>
+                        <span className="badge badge-success ml-2">{props.data.respository.total}</span>
                     </div>
 
                     <div className="description-user__link mr-5 d-flex align-items-center">
                         <a href="/">Seguidores</a>
-                        <span className="badge badge-success ml-2">{data.user.followers}</span>
+                        <span className="badge badge-success ml-2">{props.data.user.followers}</span>
                     </div>
 
                     <div className="description-user__link mr-5 d-flex align-items-center">
                         <a href="/sobre">Seguindo</a>
-                        <span className="badge badge-success ml-2">{data.user.following}</span>
+                        <span className="badge badge-success ml-2">{props.data.user.following}</span>
                     </div>
                 </div>
             </div>

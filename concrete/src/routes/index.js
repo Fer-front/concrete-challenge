@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 // views
 // -------------------------------------
-import Home from '../views/home'
+import Home from '../views/home/home'
 import Sobre from '../views/sobre'
 
 export default (

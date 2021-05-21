@@ -10,11 +10,40 @@
     }
 }
 
+@mixin generateBtnOutline($borderColor, $txtColor) {
+    $border: 2px;
+    $porcent: 10%;
+
+    background-color: transparent !important;
+    color: $txtColor;
+    border: $border solid $borderColor;
+
+    &:hover {
+        color: darken($txtColor, $porcent);
+        border: $border solid darken($borderColor, $porcent);
+    }
+}
+
+@mixin generateBtnSolid($bgcolor, $txtcolor) {
+    background-color: $bgcolor;
+    color: $txtcolor;
+
+    &:hover {
+        background-color: darken($bgcolor, 10%);
+    }
+}
+
+.btn-disabled {
+    background-color: lighten($color: $color-gray, $amount: 10) !important;
+    color: white !important;
+    cursor: not-allowed !important;
+}
+
 .g-btn {
     width: 150px;
     height: 42px;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     text-transform: uppercase;
     color: #333;
     font-weight: 800;
@@ -24,47 +53,45 @@
         color: white;
     }
 
-    &__outline {
-        &--primary {
-            @include generateStyleBtn(transparent, unset, $color-primary, 2px, $color-primary);
-        }
-        &--success {
-            @include generateStyleBtn(unset, unset, $color-success, 2px, $color-success);
-        }
-        &--error {
-            @include generateStyleBtn(unset, unset, $color-error, 2px, $color-error);
-        }
-        &--infor {
-            @include generateStyleBtn(unset, unset, $color-infor, 2px, $color-infor);
-        }
-        &--alert {
-            @include generateStyleBtn(unset, unset, $color-alert, 2px, $color-alert);
-        }
-        &--disabled {
-            @include generateStyleBtn(unset, unset, $color-gray, 2px, $color-gray);
-            cursor: not-allowed !important;
-        }
-    }
-
     &--primary {
-        @include generateStyleBtn($color-primary, lighten($color: $color-primary, $amount: 10), white, none, white);
+        @include generateBtnSolid($color-primary, white)
     }
     &--success {
-        @include generateStyleBtn($color-success, lighten($color: $color-success, $amount: 10), white, none, white);
+        @include generateBtnSolid($color-success, white)
     }
     &--error {
-        @include generateStyleBtn($color-error, $color-error, transparent, transparent, white);
+        @include generateBtnSolid($color-error, white);
     }
     &--infor {
-        @include generateStyleBtn($color-infor, $color-infor, transparent, transparent, white);
+        @include generateBtnSolid($color-infor, white);
     }
     &--alert {
-        @include generateStyleBtn($color-alert, $color-alert, transparent, transparent, white);
+        @include generateBtnSolid($color-alert, white);
+    }
+    &--disabled {
+        @extend .btn-disabled;
     }
 
-    &--disabled {
-        background-color: lighten($color: $color-gray, $amount: 10) !important;
-        color: white !important;
-        cursor: not-allowed !important;
+    &__outline {
+        &--primary {
+            @include generateBtnOutline($color-primary, $color-primary);
+        }
+        &--success {
+            @include generateBtnOutline($color-success, $color-success);
+        }
+        &--error {
+            @include generateBtnOutline($color-error, $color-error);
+        }
+        &--infor {
+            @include generateBtnOutline($color-infor, $color-infor);
+        }
+        &--alert {
+            @include generateBtnOutline($color-alert, $color-alert);
+        }
+        &--disabled {
+            @extend .btn-disabled;
+            @include generateBtnOutline($color-gray, $color-gray);
+            color: $color-gray !important;
+        }
     }
 }

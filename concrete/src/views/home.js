@@ -100,7 +100,7 @@ class Home extends React.Component {
 
           <button
             data-js="submit"
-            className="mt-4 g-btn g-btn--primary">
+            className="mt-4 g-btn g-btn__outline--success">
             buscar
           </button>
 

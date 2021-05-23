@@ -1,0 +1,51 @@
+@import '../../scss/variaveis';
+
+$sizes: (
+    small: 30px,
+    medium: 50px,
+    large: 70px,
+    xlarge: 100px,
+);
+
+@mixin generateAvatar($size, $bgcolor: #eee, $boderColor: #333) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    width: $size;
+    height: $size;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: $size;
+        height: $size;
+        border-radius: 100%;
+        border: 2px solid darken($boderColor, 10);
+        background-color: lighten($boderColor, 10);
+        z-index: 0;
+        
+    }
+
+    & .avatar__img {
+        position: relative;
+        box-sizing: border-box;
+        width: calc(#{$size} - 18%);
+        height: calc(#{$size} - 18%);
+        border-radius: 100%;
+        object-fit: cover;
+        background-color: $bgcolor;     
+    }
+}
+
+
+
+.avatar {
+    @each $label, $size in $sizes {
+        &--#{$label} {
+            @include generateAvatar($size, $color-gray, $color-gray); 
+        }
+    }
+}

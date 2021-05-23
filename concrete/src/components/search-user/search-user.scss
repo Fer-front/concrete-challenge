@@ -1,0 +1,68 @@
+@import '../../scss/help/media-query';
+@import '../../scss/variaveis';
+
+
+@include device('sm') {
+    .search-user {
+        &__icon-github { 
+            > img {
+                max-width: 70px;
+            }
+        }
+        &__title {
+            font-size: map-get($sizes, 3);
+        }
+    }
+
+    @include orientacao(true) {
+        .search-user {
+            &__icon-github {
+                > img {
+                    max-width: 50px;
+                }
+            }
+            &-header {
+                font-size: map-get($sizes, 3);
+            }
+        }
+    }
+}
+
+@include device('md') {
+    .search-user {
+        &__icon-github { 
+            > img {
+                max-width: 100px;
+            }
+        }
+        &__title {
+            font-size: map-get($sizes, 4);
+        }
+    }
+}
+
+@include device('lg') {
+    .search-user {
+        &__icon-github { 
+            > img {
+                max-width: 150px;
+            }
+        }
+        &__title {
+            font-size: map-get($sizes, 4);
+        }
+    }
+}
+
+@include device('xl') {
+    .search-user {
+        &__icon-github { 
+            > img {
+                max-width: 200px;
+            }
+        }
+        &__title {
+            font-size: map-get($sizes, 5);
+        }
+    }
+}

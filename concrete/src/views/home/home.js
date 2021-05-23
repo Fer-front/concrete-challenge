@@ -1,5 +1,4 @@
 import React from 'react'
-import debounce from '../../utils/debounce'
 import user from '../../api/repositories/user-respository'
 
 
@@ -8,8 +7,7 @@ import user from '../../api/repositories/user-respository'
 import ListUser from '../../components/user/list-user'
 import Loading from '../../components/loading/loading'
 import Boxmsg from '../../components/boxmsg/boxmsg'
-import SearchUser from './search-user'
-import Avatar from '../../components/avatar/avatar'
+import SearchUser from '../../components/search-user/search-user'
 
 class Home extends React.Component {
   constructor(props) {

@@ -15,7 +15,7 @@ function ListUser(props) {
 
     return (
         <section className="list-user">
-            <ul> {listRender} </ul>
+            <ul className="list-unstyled"> {listRender} </ul>
         </section>
     );
 }

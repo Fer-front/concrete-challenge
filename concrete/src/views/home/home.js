@@ -9,6 +9,7 @@ import ListUser from '../../components/user/list-user'
 import Loading from '../../components/loading/loading'
 import Boxmsg from '../../components/boxmsg/boxmsg'
 import SearchUser from './search-user'
+import Avatar from '../../components/avatar/avatar'
 
 class Home extends React.Component {
   constructor(props) {
@@ -100,24 +101,26 @@ class Home extends React.Component {
 
     return (
       <section className="Home container">
-        <Loading visible={this.state.loading} position={'absolute'}></Loading>
+        <div className="container">
+          <Loading visible={this.state.loading} position={'absolute'}></Loading>
 
-        <Boxmsg 
-          visible={this.state.boxmsgVisible}
-          status={this.state.boxmsgStatus} 
-          message={this.state.boxmsgMsg}
-        /> 
+          <Boxmsg 
+            visible={this.state.boxmsgVisible}
+            status={this.state.boxmsgStatus} 
+            message={this.state.boxmsgMsg}
+            /> 
 
-        <div className="d-flex flex-column justify-content-center align-items-center my-5 py-4">
-          <SearchUser 
-            inputChange={this.handleChangeSearchUser}
-            btnSubmit={this.handleSubmit}
-          />
+          <div className="d-flex flex-column justify-content-center align-items-center my-5 py-4">
+            <SearchUser 
+              inputChange={this.handleChangeSearchUser}
+              btnSubmit={this.handleSubmit}
+              />
+          </div>
+
+          <section className="home__list-user d-flex justify-content-center">
+            <ListUser users={this.state.usuario} /> 
+          </section>
         </div>
-
-        <section className="home__list-user d-flex justify-content-center">
-          <ListUser users={this.state.usuario} /> 
-        </section>
       </section>
     )
   }

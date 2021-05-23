@@ -12,7 +12,7 @@ function SearchUser (props) {
             </figure>
 
             <header className="search-user-header">
-                <h1>Buscar usuário</h1>
+                <h1 className="search-user__title">Buscar usuário</h1>
             </header>
 
             <input

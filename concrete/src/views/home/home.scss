@@ -1,0 +1,53 @@
+@import '../../scss/help/media-query';
+@import '../../scss/variaveis';
+
+.home {
+    &__icon{
+        color: $gray-medium ;
+        border-radius: 100%;
+        box-sizing: unset;
+        padding: 7px;
+        background-color: $gray;
+    }
+}
+
+@include device('sm'){
+    .home {
+        &__icon{
+            color: $gray-medium ;
+            border-radius: 100%;
+            box-sizing: unset;
+            padding: 7px;
+            background-color: $gray;
+
+            &:hover {
+                background-color: darken($gray, 10);
+            }
+        }
+    }
+
+}
+
+@include device('md'){
+    .home {
+        &__search-area {
+            margin-top: 150px;
+        }
+    }
+}
+
+@include device('lg'){
+    .home {
+        &__search-area {
+            margin-top: 150px;
+        }
+    }
+}
+
+@include device('xl'){
+    .home {
+        &__search-area {
+            margin-top: 150px;
+        }
+    }
+}

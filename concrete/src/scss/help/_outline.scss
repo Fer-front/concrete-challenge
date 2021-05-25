@@ -1,0 +1,9 @@
+input,
+button {
+    outline:0;
+
+    &:focus {
+        border: 2px solid rgba(226, 178, 21, 0.356) !important;
+    }
+}
+

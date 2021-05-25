@@ -100,33 +100,36 @@ class Home extends React.Component {
             btnSubmit={this.handleSubmit}
           />
         </div>
-      )
-    }
+      );
+    };
 
     const setTemplateDescriptionUser = () => {
       return (
         <section className="home__list-user d-flex justify-content-center mt-4 mb-5">
-        <DescriptionUser data={this.state.usuario[0]} />
-      </section>
-      )
-    }
+          <DescriptionUser data={this.state.usuario[0]} />
+        </section>
+      );
+    };
 
     const setTemplateNavBottom = () => {
       return (
         <NavBottom>
-        <a href={this.state.usuario[0].user.perfil}>
-          <GoPerson className="home__icon home__icon--person" />
-        </a>
-        <a href="/repositorios">
-          <GoRepo className="home__icon home__icon--repository" />
-        </a>
-      </NavBottom>
-      )
-    }
+          <a href={this.state.usuario[0].user.perfil}>
+            <GoPerson className="home__icon home__icon--person" />
+          </a>
+          <a href="/repositorios">
+            <span className="badge badge-danger position-absolute">{this.state.usuario[0].respository.total}</span>
+            <GoRepo className="home__icon home__icon--repository" />
+          </a>
+        </NavBottom>
+      );
+    };
 
     const setTemplateButtomSearchAbsolute = () => {
-      return <GoSearch onClick={this.toggleSearchUser} className="home__icon mt-3" />
-    }
+      return (
+        <GoSearch onClick={this.toggleSearchUser} className="home__icon mt-3" />
+      );
+    };
 
     return (
       <section className="Home container">
@@ -140,17 +143,21 @@ class Home extends React.Component {
 
         <div className="container">
           <NavTop type="right">
-            {!this.state.compSearchUserVisible ? setTemplateButtomSearchAbsolute() : null}
+            {!this.state.compSearchUserVisible
+              ? setTemplateButtomSearchAbsolute()
+              : null}
           </NavTop>
 
           <div className="home__search-area pt-4">
-            {this.state.compSearchUserVisible 
+            {this.state.compSearchUserVisible
               ? setTemplateSearchUser()
               : setTemplateDescriptionUser()}
           </div>
         </div>
-        
-        {this.state.usuario.length && !this.state.compSearchUserVisible ? setTemplateNavBottom() : null}
+
+        {this.state.usuario.length && !this.state.compSearchUserVisible
+          ? setTemplateNavBottom()
+          : null}
       </section>
     );
   }

@@ -1,0 +1,50 @@
+$icon_url: (
+    angular: '../../assets/languagem/angular.svg',
+    babel: '../../assets/languagem/babel.svg',
+    dart: '../../assets/languagem/dart.svg',
+    clojure: '../../assets/languagem/clojure.svg',
+    cobol: '../../assets/languagem/cobol.svg',
+    go: '../../assets/languagem/go_gopher.svg',
+    elixir: '../../assets/languagem/elixir.svg',
+    elm: '../../assets/languagem/elm.svg',
+    erlang: '../../assets/languagem/erlang.svg',
+    graphql: '../../assets/languagem/graphql.svg',
+    grunt: '../../assets/languagem/grunt.svg',
+    handlebars: '../../assets/languagem/handlebars.svg',
+    haskell: '../../assets/languagem/haskell.svg',
+    html: '../../assets/languagem/html.svg',
+    java: '../../assets/languagem/java.svg',
+    javascript: '../../assets/languagem/javascript.svg',
+    typescript: '../../assets/languagem/typescript-def.svg',
+    swift: '../../assets/languagem/swift.svg',
+    vue: '../../assets/languagem/vue.svg',
+    react: '../../assets/languagem/react.svg',
+    node: '../../assets/languagem/nodejs.svg',
+    json: '../../assets/languagem/json.svg',
+    sass: '../../assets/languagem/sass.svg',
+    c: '../../assets/languagem/c.svg',
+    cpp: '../../assets/languagem/cpp.svg',
+    css: '../../assets/languagem/css.svg',
+);
+
+$size-icons: (20, 30, 40, 50, 60, 70, 80, 90, 100);
+
+.icon-lang {
+    background-repeat: no-repeat;    
+    width: 20px;
+    height: 20px;
+    
+    @each $size in $size-icons {
+        &--#{$size} {
+            width: #{$size}px;
+            height: #{$size}px;
+        }
+    }
+
+    @each $label, $path in $icon_url {
+        &--#{$label} {
+            background-image: url($path);
+        }        
+    }
+}
+

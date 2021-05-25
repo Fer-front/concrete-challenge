@@ -1,14 +1,19 @@
 @import '../../scss/variaveis/index.scss';
+@import '../../scss/help/media-query';
 
 .description-user {
     $root: &;
-
-    min-width: 320px;
+    min-width: 250px;
     width: 100% !important;
 
     &__content {
-        #{$root}__name {}
-        #{$root}__email {}
+        #{$root}__name {
+            font-size: map-get($sizes, 3);
+            color: rgb(32, 32, 32) ;
+        }
+        #{$root}__email {
+            color: #555;
+        }
     }
 
     &__data {
@@ -20,5 +25,15 @@
 
     &__links > * {
         color: $color-infor;
+    }
+}
+
+@include device('sm') {
+    .description-user {
+        &__data {
+            &__item {
+                font-size: 11px;
+            }
+        }
     }
 }

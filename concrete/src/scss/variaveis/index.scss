@@ -5,7 +5,6 @@ $directions-padding: ('t': 'padding-top', 'b': 'padding-bottom', 'l': 'padding-l
 
 $color-primary: #151936;
 $color-secundary: #6273F6;
-$color-font-primary: #A7A8F3;
 $color-gray: rgb(190, 190, 190) ;
 
 $color-success: #189713;
@@ -13,5 +12,15 @@ $color-error: #ca5656;
 $color-alert: #c2d119;
 $color-infor: #1d97c7;
 
+$color-font: rgb(39, 39, 39);
+
+$borders: (1: 4, 2: 8, 3: 16);
 
 $gradiente-avatar: linear-gradient(300deg, rgba(47,38,195,1) 0%, rgba(62,62,167,1) 35%, rgba(5,185,142,1) 66%, rgba(0,212,255,1) 100%);
+
+
+$green: #1e875a;
+$green-ligth: #78f2c0;
+$lilas-ligth: #9a8dda;
+$gray: #f3f5f7;
+$gray-medium: #999999

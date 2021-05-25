@@ -27,6 +27,11 @@
     cursor: not-allowed !important;
 }
 
+// .btn-bgcolor-gradiente {    
+//     background-color: #00e974;
+//     background-image: linear-gradient(160deg, #00e974 0%, #77c9b1 100%);
+// }
+
 .g-btn {
     width: 150px;
     height: 42px;
@@ -42,7 +47,8 @@
     }
 
     &--primary {
-        @include generateBtnSolid($color-primary, white)
+        @include generateBtnSolid($color-primary, white);
+        @extend .gradiente-green;
     }
     &--success {
         @include generateBtnSolid($color-success, white)

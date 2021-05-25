@@ -142,11 +142,8 @@ class Home extends React.Component {
           <NavTop type="right">
             {!this.state.compSearchUserVisible ? setTemplateButtomSearchAbsolute() : null}
           </NavTop>
-          {/* <div className="d-flex justify-content-end">
-            {!this.state.compSearchUserVisible ? setTemplateButtomSearchAbsolute() : null}
-          </div> */}
 
-          <div className="home__search-area">
+          <div className="home__search-area pt-4">
             {this.state.compSearchUserVisible 
               ? setTemplateSearchUser()
               : setTemplateDescriptionUser()}

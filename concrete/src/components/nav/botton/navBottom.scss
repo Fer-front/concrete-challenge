@@ -1,0 +1,17 @@
+$altura: 60px;
+
+.nav-bottom {
+    background-color: white;
+    border-top: 0.10em solid #eee;
+    
+    &--fixed {
+        position: fixed;
+        left: 0;
+        top: 100%;
+        transform: translateY(- $altura);
+        overflow: hidden;
+        width: 100%;
+        height: $altura;
+        padding: 10px;
+    }
+}

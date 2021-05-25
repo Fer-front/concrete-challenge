@@ -1,5 +1,9 @@
+import './home.scss';
 import React from 'react'
 import user from '../../api/repositories/user-respository'
+
+import { GoSearch } from 'react-icons/go'
+import user_service from '../../services/user'
 
 
 // COMPONENTS 
@@ -21,29 +25,16 @@ class Home extends React.Component {
       boxmsgStatus: '',
       boxmsgMsg: '',
       boxmsgVisible: false,
+      compSearchUserVisible: true,
     }
 
     this.handleChangeSearchUser = this.handleChangeSearchUser.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.toggleSearchUser = this.toggleSearchUser.bind(this)
   }
 
-  adapterDataListUser(response) {
-    return {
-      user: {
-        id: response.data.id,
-        name: response.data.login,
-        nickName: response.data.login,
-        email: response.data.email,
-        avatar: response.data.avatar_url,
-        bio: response.data.bio,
-        followers: response.data.followers,
-        following: response.data.following,
-      },
-      respository: {
-        url: response.data.repos_url,
-        total: response.data.public_repos,
-      }
-    }
+  toggleSearchUser() {
+    this.setState({ compSearchUserVisible: !this.state.compSearchUserVisible })
   }
 
   async searchUserGitHub(userName) {
@@ -52,7 +43,7 @@ class Home extends React.Component {
 
     if (response.status === 'error') return []
 
-    const dataUser = this.adapterDataListUser(response)
+    const dataUser = user_service.adapterDataUser(response)
     return [dataUser]
   }
 
@@ -89,6 +80,9 @@ class Home extends React.Component {
 
     this.updateListUser(arrUser)
     this.toggleLoading()
+    this.setState({inputValue: ''})
+
+    if (arrUser.length) this.toggleSearchUser()
   }
 
   handleChangeSearchUser(e) {
@@ -99,24 +93,40 @@ class Home extends React.Component {
 
     return (
       <section className="Home container">
+        <Loading visible={this.state.loading} position={'absolute'}></Loading>
+
+        <Boxmsg 
+          visible={this.state.boxmsgVisible}
+          status={this.state.boxmsgStatus} 
+          message={this.state.boxmsgMsg}
+          /> 
+
         <div className="container">
-          <Loading visible={this.state.loading} position={'absolute'}></Loading>
-
-          <Boxmsg 
-            visible={this.state.boxmsgVisible}
-            status={this.state.boxmsgStatus} 
-            message={this.state.boxmsgMsg}
-            /> 
-
-          <div className="d-flex flex-column justify-content-center align-items-center my-5 py-4">
-            <SearchUser 
-              inputChange={this.handleChangeSearchUser}
-              btnSubmit={this.handleSubmit}
-              />
+          
+          <div className="d-flex justify-content-end">
+            {
+              !this.state.compSearchUserVisible
+                ? <GoSearch onClick={this.toggleSearchUser} className="home__icon mt-3"/>
+                : null
+            }
           </div>
 
-          <section className="home__list-user d-flex justify-content-center">
-            <ListUser users={this.state.usuario} /> 
+          <div className="home__search-area">
+            {
+              this.state.compSearchUserVisible 
+                ? <div className="mt-5">
+                    <SearchUser inputChange={this.handleChangeSearchUser} btnSubmit={this.handleSubmit}/>
+                  </div>
+                : null
+            }
+          </div>
+
+          <section className="home__list-user d-flex justify-content-center mt-4">
+            {
+              !this.state.compSearchUserVisible
+                ? <ListUser users={this.state.usuario} /> 
+                : null
+            }
           </section>
         </div>
       </section>

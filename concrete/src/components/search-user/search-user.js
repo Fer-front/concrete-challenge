@@ -11,10 +11,13 @@ import random from '../../utils/random'
 import octcat from '../../assets/icon-ocat.png'
 import octcat_yoga from '../../assets/icon-ocat-yoga.gif'
 import octcat_disco from '../../assets/icon-ocat-disco.gif'
+import octcat_disco_2 from '../../assets/icon-ocat-disco-2.gif'
 import octcat_jet from '../../assets/icon-octa-jet.png'
 import octcat_shinoby from '../../assets/icon-octa-shinoby.jpg'
 import octcat_white from '../../assets/icon-octa-white.png'
 import octcat_wolv from '../../assets/icon-octa-wolv.jpg'
+import octcat_de from '../../assets/icon-ocat.gif'
+
  
 
 
@@ -22,11 +25,13 @@ function randomIcon() {
     const icons = [
         octcat, 
         octcat_disco, 
+        octcat_disco_2, 
         octcat_yoga,
         octcat_jet,
         octcat_shinoby,
         octcat_white,
         octcat_wolv,
+        octcat_de,
     ]
 
     const len = icons.length

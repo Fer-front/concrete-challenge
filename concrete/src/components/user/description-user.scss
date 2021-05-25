@@ -9,7 +9,7 @@
     &__content {
         #{$root}__name {
             font-size: map-get($sizes, 3);
-            color: rgb(32, 32, 32) ;
+            color: darken(#20c997, 20) !important;
         }
         #{$root}__email {
             color: #555;
@@ -26,14 +26,77 @@
     &__links > * {
         color: $color-infor;
     }
+
+    &__bio {
+        &__label {}
+        &__text {
+            width: 100%;
+            min-height: 40px;
+            padding: 5px;
+            background-color: $gray;
+        }
+    }
 }
 
 @include device('sm') {
     .description-user {
+        &__name {
+            font-size: map-get($font-size , 3) !important;
+            color: darken(#20c997, 20) !important;
+        }
+
         &__data {
             &__item {
-                font-size: 11px;
+                font-size: 16px;
+            }
+        }
+
+        &__bio {
+            &__text {
+                font-size: map-get($sizes , 2);
             }
         }
     }
+}
+
+@include device('md') {
+    .description-user {
+        &__name {
+            font-size: map-get($font-size , 4) !important;
+        }
+
+        &__data {
+            &__item {
+                font-size: 16px;
+            }
+        }
+
+        &__bio {
+            &__text {
+                font-size: map-get($font-size , 2);
+            }
+        }
+    }
+}
+
+@include device('lg') {
+    .description-user {
+        &__name {
+            margin-top: 80px;
+            font-size: map-get($font-size , 5) !important;
+        }
+
+        &__data {
+            &__item {
+                font-size: 16px;
+            }
+        }
+
+        &__bio {
+            &__text {
+                font-size: map-get($font-size , 2);
+            }
+        }
+    }
+
 }

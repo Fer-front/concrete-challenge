@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 
-import handleResponse from '../../utils/handleResponse'
+import handleResponse from '../../../utils/handleResponse'
 
 
 const gitHub = axios.create({

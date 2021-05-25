@@ -15,10 +15,12 @@ h1, h2, h3, h4, small, span, p {
     color: $color-font;
 }
 
-.titulo {
-    font-size: 32px;
-    font-weight: 700;
+h1, h2, h3, h4 {
+    font-family: 'Pattaya', sans-serif;
+}
 
+.titulo {
+    font-size: map-get($font-size, 3);
     @include generateFontSize(24px, 44px, 56px);
 }
 

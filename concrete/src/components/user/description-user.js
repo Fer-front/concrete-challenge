@@ -22,6 +22,27 @@ function descriptionUser(props) {
         </h2>
         <span className="description-user__email">{props.data.user.email}</span>
       </header>
+
+      <div className="description-user__data">
+        <div className="description-user__bio">
+          <small className="description-user__bio__label">Nome:</small>
+
+          <p className="description-user__bio__text font--light font--error">
+            {props.data.user.name}
+          </p>
+        </div>
+      </div>
+
+      <div className="description-user__data">
+        <div className="description-user__bio">
+          <small className="description-user__bio__label">location:</small>
+
+          <p className="description-user__bio__text font--light font--error">
+            {props.data.user.name}
+          </p>
+        </div>
+      </div>
+
       <div className="description-user__data">
         <div className="description-user__bio">
           <small className="description-user__bio__label">Bio:</small>
@@ -31,6 +52,7 @@ function descriptionUser(props) {
           </p>
         </div>
       </div>
+
       <div className="my-2 mb-3">
         <ul className="list-unstyled d-flex align-items-center justify-content-between">
           <li className="description-user__data__item mx-2">

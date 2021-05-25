@@ -2,15 +2,29 @@
 @import '../../scss/variaveis';
 
 
+.search-user {
+    width: 100%;
+
+    &__icon-github { 
+        height: 150px;
+        > img {
+            max-width: 200px;
+            width: 100%;
+        }
+    }
+    &__input-search {
+        max-width: 400px;
+        background-color: $gray;
+        border: none;
+    }
+}
+
 @include device('sm') {
     .search-user {
-        &__icon-github { 
+        &__icon-github {
             > img {
-                max-width: 70px;
+                width: 150px;
             }
-        }
-        &__title {
-            font-size: map-get($sizes, 3);
         }
     }
 
@@ -18,7 +32,7 @@
         .search-user {
             &__icon-github {
                 > img {
-                    max-width: 50px;
+                    width: 50px;
                 }
             }
             &-header {
@@ -30,39 +44,24 @@
 
 @include device('md') {
     .search-user {
-        &__icon-github { 
-            > img {
-                max-width: 100px;
-            }
-        }
-        &__title {
-            font-size: map-get($sizes, 4);
+        &__input-search {
+            width: 80% ;
         }
     }
 }
 
-@include device('lg') {
+@include device('lg') {        
     .search-user {
-        &__icon-github { 
-            > img {
-                max-width: 150px;
-            }
-        }
-        &__title {
-            font-size: map-get($sizes, 4);
+        &__input-search {
+            width: 100% ;
         }
     }
 }
 
 @include device('xl') {
     .search-user {
-        &__icon-github { 
-            > img {
-                max-width: 200px;
-            }
-        }
-        &__title {
-            font-size: map-get($sizes, 5);
+        &__input-search {
+            width: 100% ;
         }
     }
 }

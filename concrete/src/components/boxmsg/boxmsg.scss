@@ -1,4 +1,5 @@
 @import '../../scss/variaveis';
+@import '../../scss/help/media-query';
 
 .boxmsg {
     position: fixed;
@@ -37,5 +38,34 @@
         list-style: none;
         padding: 0 20px 0 20px;
         margin: 0;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        top: 100%;
+    }
+    25% {
+        opacity: 1;
+        top: calc(100% - 120px);
+    }
+    75% {
+        opacity: 1;
+        top: calc(100% - 120px);
+    }
+    90% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+
+@include device('sm') {
+    .boxmsg {
+        min-width: 90% !important;
+        min-height: 40px;
+
+        animation: slideUp 4s !important;
     }
 }

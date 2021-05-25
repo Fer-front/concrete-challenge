@@ -4,7 +4,7 @@ $sizes: (
     small: 30px,
     medium: 50px,
     large: 70px,
-    xlarge: 100px,
+    xlarge: 180px,
 );
 
 @mixin generateAvatar($size, $bgcolor: #eee, $boderColor: #333) {
@@ -23,10 +23,9 @@ $sizes: (
         width: $size;
         height: $size;
         border-radius: 100%;
-        border: 2px solid darken($boderColor, 10);
-        background-color: lighten($boderColor, 10);
+        border: 1px solid darken(#20c99f, 10);
+        // background-color: lighten($boderColor, 20);
         z-index: 0;
-        
     }
 
     & .avatar__img {

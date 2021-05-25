@@ -1,4 +1,4 @@
-import { FaSpinner } from 'react-icons/fa'
+import { GoSync } from 'react-icons/go'
 import './loading.scss'
 
 function Loading (props) {
@@ -7,7 +7,7 @@ function Loading (props) {
     
     const template = (
         <div className={ isAbsolute ? 'loading__background' : '' }>
-            <FaSpinner className={`loading loading--animated ${isAbsolute}`}/>
+            <GoSync className={`loading loading--animated ${isAbsolute}`}/>
         </div>
     )
 

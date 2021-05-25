@@ -3,11 +3,13 @@
 
 .home {
     &__icon{
+        font-size: 22px;
         color: $gray-medium ;
         border-radius: 100%;
         box-sizing: unset;
         padding: 7px;
-        background-color: $gray;
+        display: block;
+        margin-bottom: 0;
     }
 }
 
@@ -17,12 +19,6 @@
             color: $gray-medium ;
             border-radius: 100%;
             box-sizing: unset;
-            padding: 7px;
-            background-color: $gray;
-
-            &:hover {
-                background-color: darken($gray, 10);
-            }
         }
     }
 

@@ -1,0 +1,42 @@
+.baseFlex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-top { 
+    position: fixed;     
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+
+    &--right {
+        @extend .baseFlex;
+        justify-content: flex-end;
+    }
+
+    &--left {
+        @extend .baseFlex;
+        justify-content: flex-start;
+    }
+
+    &--center {
+        @extend .baseFlex;
+        justify-content: center;
+    }
+
+    &--around {
+        @extend .baseFlex;
+        justify-content: space-around;
+    }
+
+    &--betweem {
+        @extend .baseFlex;
+        justify-content: space-between;
+    }
+}

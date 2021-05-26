@@ -1,5 +1,6 @@
 import "./home.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 import user from "../../api/repositories/user-respository";
 
 import { GoSearch } from "react-icons/go";
@@ -15,20 +16,22 @@ import NavBottom from "../../components/nav/botton/navBottom";
 import NavTop from "../../components/nav/top/navTop";
 import DescriptionUser from "../../components/user/description-user";
 
+const initialState = {
+  usuario: [],
+  loading: false,
+  boxmsg: false,
+  inputValue: "",
+  boxmsgStatus: "",
+  boxmsgMsg: "",
+  boxmsgVisible: false,
+  compSearchUserVisible: true,
+};
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      usuario: [],
-      loading: false,
-      boxmsg: false,
-      inputValue: "",
-      boxmsgStatus: "",
-      boxmsgMsg: "",
-      boxmsgVisible: false,
-      compSearchUserVisible: true,
-    };
+    this.state = initialState;
 
     this.handleChangeSearchUser = this.handleChangeSearchUser.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -114,13 +117,20 @@ class Home extends React.Component {
     const setTemplateNavBottom = () => {
       return (
         <NavBottom>
-          <a href={this.state.usuario[0].user.perfil}>
+          <Link to={this.state.usuario[0].user.perfil}>
             <GoPerson className="home__icon home__icon--person" />
-          </a>
-          <a href="/repositorios">
-            <span className="badge badge-danger position-absolute">{this.state.usuario[0].respository.total}</span>
+          </Link>
+          <Link
+            to={{
+              pathname: "/repositorios",
+              state: { user: this.state.usuario[0].user },
+            }}
+          >
+            <span className="badge badge-danger position-absolute">
+              {this.state.usuario[0].respository.total}
+            </span>
             <GoRepo className="home__icon home__icon--repository" />
-          </a>
+          </Link>
         </NavBottom>
       );
     };

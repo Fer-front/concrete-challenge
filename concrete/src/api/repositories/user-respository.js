@@ -23,6 +23,7 @@ const USER = {
     getDetail,
     listRepositorys,
     getRepository,
+    getLanguagesFromRepository,
 }
 
 export default USER

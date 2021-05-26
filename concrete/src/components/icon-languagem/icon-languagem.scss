@@ -1,13 +1,13 @@
 $icon_url: (
     angular: '../../assets/languagem/angular.svg',
     babel: '../../assets/languagem/babel.svg',
-    dart: '../../assets/languagem/dart.svg',
     clojure: '../../assets/languagem/clojure.svg',
     cobol: '../../assets/languagem/cobol.svg',
-    go: '../../assets/languagem/go_gopher.svg',
+    dart: '../../assets/languagem/dart.svg',
     elixir: '../../assets/languagem/elixir.svg',
     elm: '../../assets/languagem/elm.svg',
     erlang: '../../assets/languagem/erlang.svg',
+    go: '../../assets/languagem/go_gopher.svg',
     graphql: '../../assets/languagem/graphql.svg',
     grunt: '../../assets/languagem/grunt.svg',
     handlebars: '../../assets/languagem/handlebars.svg',
@@ -22,7 +22,15 @@ $icon_url: (
     node: '../../assets/languagem/nodejs.svg',
     json: '../../assets/languagem/json.svg',
     sass: '../../assets/languagem/sass.svg',
-
+    scss: '../../assets/languagem/sass.svg',
+    shell: '../../assets/languagem/shell.svg',
+    less: '../../assets/languagem/less.svg',
+    python: '../../assets/languagem/python.svg',
+    kotlin: '../../assets/languagem/kotlin.svg',
+    ruby: '../../assets/languagem/ruby.svg',
+    docker: '../../assets/languagem/docker.svg',
+    dockerfile: '../../assets/languagem/docker.svg',
+    csharp: '../../assets/languagem/csharp.svg',
 );
 
 $size-icons: (20, 30, 40, 50, 60, 70, 80, 90, 100);

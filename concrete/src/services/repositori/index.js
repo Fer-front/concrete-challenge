@@ -1,5 +1,3 @@
-import repository from '../../api/repositories/user-respository'
-
 
 // {
 //     description: string
@@ -23,6 +21,7 @@ import repository from '../../api/repositories/user-respository'
 
 function factoryDataRepository(data) {
   const {
+    name,
     description,
     url,
     created_at,
@@ -33,6 +32,7 @@ function factoryDataRepository(data) {
   } = data;
 
   return {
+    name,
     description,
     url,
     created_at,
@@ -43,6 +43,14 @@ function factoryDataRepository(data) {
   };
 }
 
-function getLingugens(){
-    repository.getRepository()
+function adapterDataRepositoryItem(data) {
+  if(!data) return console.error('Faltou dados do repositorio', typeof data )  
+
+  const list = Object.keys(data)
+  return list
+}
+
+export {
+  factoryDataRepository,
+  adapterDataRepositoryItem,
 }

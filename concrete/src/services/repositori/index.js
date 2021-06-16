@@ -23,7 +23,7 @@ function factoryDataRepository(data) {
   const {
     name,
     description,
-    url,
+    html_url,
     created_at,
     updated_at,
     clone_url,
@@ -34,7 +34,7 @@ function factoryDataRepository(data) {
   return {
     name,
     description,
-    url,
+    html_url,
     created_at,
     updated_at,
     clone_url,

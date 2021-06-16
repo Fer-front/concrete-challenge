@@ -2,9 +2,11 @@ import "./repository-item.scss";
 
 import React from "react";
 import axios from "axios";
-
 import { Link } from "react-router-dom";
+
 import { GoRepoClone } from "react-icons/go";
+import { MdStar } from "react-icons/md";
+
 import Button from "../button/button";
 import IconLang from "../icon-languagem/icon-languagem";
 import { adapterDataRepositoryItem } from "../../services/repositori";
@@ -36,7 +38,7 @@ class RepositoryItem extends React.Component {
     const {
       name,
       description,
-      // url,
+      html_url,
       // created_at,
       // updated_at,
       // clone_url,
@@ -45,14 +47,9 @@ class RepositoryItem extends React.Component {
 
     return (
       <article className="repository-item">
-        <header className="d-flex align-items-center">
-          <Link
-            to={{
-              pathname: "/repositorios/detalhe",
-              state: { user: "" },
-            }}
-          >
-            <h2>{name}</h2>
+        <header>
+          <Link to={html_url} target="_blank" rel="noopener noreferrer" >
+            <h2 className="repository-item__name">{name}</h2>
           </Link>
         </header>
 
@@ -70,15 +67,16 @@ class RepositoryItem extends React.Component {
 
         <div className="repository-item__actions">
           <div className="d-flex justify-content-between align-items-center my-2">
-            <div>
-              <span className="badge badge-warning text-white">
-                {stargazers_count} Star
+            <div className="d-flex align-items-center badge badge-warning p-1">
+              <MdStar className="text-white mr-1" />
+              <span className="text-white">
+                {stargazers_count}
               </span>
             </div>
             <Button
               label="clonar"
               type="primary"
-              size="small"
+              size="small py-1"
               icon={<GoRepoClone className="mr-2" />}
             />
           </div>

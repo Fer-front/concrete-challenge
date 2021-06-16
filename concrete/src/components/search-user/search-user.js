@@ -8,17 +8,15 @@ import random from '../../utils/random'
 
 // icons
 // ---------------------------------------
-import octcat from '../../assets/icon-ocat.png'
-import octcat_yoga from '../../assets/icon-ocat-yoga.gif'
-import octcat_disco from '../../assets/icon-ocat-disco.gif'
-import octcat_disco_2 from '../../assets/icon-ocat-disco-2.gif'
-import octcat_jet from '../../assets/icon-octa-jet.png'
-import octcat_shinoby from '../../assets/icon-octa-shinoby.jpg'
-import octcat_white from '../../assets/icon-octa-white.png'
-import octcat_wolv from '../../assets/icon-octa-wolv.jpg'
-import octcat_de from '../../assets/icon-ocat.gif'
-
- 
+import octcat from '../../assets/octo/icon-ocat.png'
+import octcat_yoga from '../../assets/octo/icon-ocat-yoga.gif'
+import octcat_disco from '../../assets/octo/icon-ocat-disco.gif'
+import octcat_disco_2 from '../../assets/octo/icon-ocat-disco-2.gif'
+import octcat_jet from '../../assets/octo/icon-octa-jet.png'
+import octcat_shinoby from '../../assets/octo/icon-octa-shinoby.jpg'
+import octcat_white from '../../assets/octo/icon-octa-white.png'
+import octcat_wolv from '../../assets/octo/icon-octa-wolv.jpg'
+import octcat_de from '../../assets/octo/icon-ocat.gif'
 
 
 function randomIcon() {
@@ -34,9 +32,7 @@ function randomIcon() {
         octcat_de,
     ]
 
-    const len = icons.length
-
-    const index = random(0, len)
+    const index = random(0, icons.length)
     
     return icons[index]
 }

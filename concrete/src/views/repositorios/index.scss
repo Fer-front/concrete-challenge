@@ -1,0 +1,17 @@
+@import '../../scss/variaveis/index.scss';
+
+body {
+    margin-bottom: 100px;
+}
+
+.list-repository {
+    &__icon{
+        font-size: 22px;
+        color: $gray-medium ;
+        border-radius: 100%;
+        box-sizing: unset;
+        padding: 7px;
+        display: block;
+        margin-bottom: 0;
+    }
+}

@@ -7,7 +7,7 @@ $altura: 60px;
     &--fixed {
         position: fixed;
         left: 0;
-        top: 100%;
+        top: 100vh;
         transform: translateY(- $altura);
         overflow: hidden;
         width: 100%;

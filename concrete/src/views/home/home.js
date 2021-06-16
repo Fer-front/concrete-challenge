@@ -13,7 +13,6 @@ import Loading from "../../components/loading/loading";
 import Boxmsg from "../../components/boxmsg/boxmsg";
 import SearchUser from "../../components/search-user/search-user";
 import NavBottom from "../../components/nav/botton/navBottom";
-import NavTop from "../../components/nav/top/navTop";
 import DescriptionUser from "../../components/user/description-user";
 
 const initialState = {
@@ -117,7 +116,7 @@ class Home extends React.Component {
     const setTemplateNavBottom = () => {
       return (
         <NavBottom>
-          <Link to={this.state.usuario[0].user.perfil}>
+          <Link to={this.state.usuario[0].user.perfil} target="_blank" rel="noopener noreferrer">
             <GoPerson className="home__icon home__icon--person" />
           </Link>
           <Link
@@ -131,13 +130,8 @@ class Home extends React.Component {
             </span>
             <GoRepo className="home__icon home__icon--repository" />
           </Link>
+          <GoSearch onClick={this.toggleSearchUser} className="home__icon" />
         </NavBottom>
-      );
-    };
-
-    const setTemplateButtomSearchAbsolute = () => {
-      return (
-        <GoSearch onClick={this.toggleSearchUser} className="home__icon mt-3" />
       );
     };
 
@@ -152,12 +146,6 @@ class Home extends React.Component {
         />
 
         <div className="container">
-          <NavTop type="right">
-            {!this.state.compSearchUserVisible
-              ? setTemplateButtomSearchAbsolute()
-              : null}
-          </NavTop>
-
           <div className="home__search-area pt-4">
             {this.state.compSearchUserVisible
               ? setTemplateSearchUser()

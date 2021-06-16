@@ -2,12 +2,9 @@ import "./repository-item.scss";
 
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
-import { GoRepoClone } from "react-icons/go";
 import { MdStar } from "react-icons/md";
 
-import Button from "../button/button";
 import IconLang from "../icon-languagem/icon-languagem";
 import { adapterDataRepositoryItem } from "../../services/repositori";
 
@@ -24,14 +21,14 @@ class RepositoryItem extends React.Component {
     this.setState({ ...this.state, languagem: arr });
   }
 
+  generateListLanguagem(list) {
+    return list.map((lang, index) => <IconLang key={index} type={lang} />);
+  }
+
   async componentDidMount() {
     const res = await axios.get(this.props.data.languages_url);
     const listLanguagem = adapterDataRepositoryItem(res.data);
     this.updateLanguagem(listLanguagem);
-  }
-
-  generateListLanguagem(list) {
-    return list.map((lang, index) => <IconLang key={index} type={lang} />);
   }
 
   render() {
@@ -39,46 +36,33 @@ class RepositoryItem extends React.Component {
       name,
       description,
       html_url,
-      // created_at,
-      // updated_at,
-      // clone_url,
       stargazers_count,
     } = this.props.data;
 
     return (
       <article className="repository-item">
-        <header>
-          <Link to={html_url} target="_blank" rel="noopener noreferrer" >
+
+        <header className="d-flex justify-content-between align-content-start">
+          <a href={html_url} target="_blank" rel="noreferrer">
             <h2 className="repository-item__name">{name}</h2>
-          </Link>
+          </a>
+          <div className="my-2">
+            <div className="d-flex align-items-center badge badge-warning p-1">
+              <MdStar className="text-white mr-1" />
+              <span className="text-white">{stargazers_count}</span>
+            </div>
+          </div>
         </header>
 
         <div className="description-user__data">
           <div className="description-user__bio">
             <small className="description-user__bio__label">
-              Descricao repositorio:
+              Descrição repositório:
             </small>
 
             <p className="description-user__bio__text font--light font--error">
               {description}
             </p>
-          </div>
-        </div>
-
-        <div className="repository-item__actions">
-          <div className="d-flex justify-content-between align-items-center my-2">
-            <div className="d-flex align-items-center badge badge-warning p-1">
-              <MdStar className="text-white mr-1" />
-              <span className="text-white">
-                {stargazers_count}
-              </span>
-            </div>
-            <Button
-              label="clonar"
-              type="primary"
-              size="small py-1"
-              icon={<GoRepoClone className="mr-2" />}
-            />
           </div>
         </div>
 

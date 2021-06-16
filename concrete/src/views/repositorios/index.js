@@ -10,6 +10,7 @@ import NavBottom from "../../components/nav/botton/navBottom";
 import ListRepository from "../../components/repository/listRepository";
 
 import { MdHome } from "react-icons/md"
+import { BiSortDown, BiSortUp } from "react-icons/bi"
 
 
 function UserException(msg) {
@@ -23,7 +24,7 @@ const initialState = {
     nickName: "",
   },
   repositories: [],
-  listDecrecente: false,
+  listDecrecente: true,
 };
 
 class Repositorios extends React.Component {
@@ -31,6 +32,7 @@ class Repositorios extends React.Component {
     super(props);
 
     this.state = initialState;
+    this.toggle = this.toggle.bind(this)
   }
 
   toggle() {
@@ -83,6 +85,21 @@ class Repositorios extends React.Component {
     return this.state.repositories.length ? template : null
   }
 
+  renderButtonFilter() {
+    return (
+      <div
+        onClick={this.toggle} 
+        className="d-flex justify-content-end align-items-center mb-4">
+          <span className="mr-1">filtar:</span>
+          {
+          this.state.listDecrecente
+            ? <BiSortDown onClick={this.toggle}/>
+            : <BiSortUp onClick={this.toggle}/>
+          }
+      </div>
+    )
+  }
+
   async componentDidMount() {
     const { avatar, nickName } = this.props.location.state.user;
     this.updateUser({ avatar, nickName });
@@ -111,10 +128,7 @@ class Repositorios extends React.Component {
             <h1>Lista de repositorios</h1>
             <hr className="mb-5" />
 
-            <div>
-              <button onClick={this.toggle}>toggle</button>
-            </div>
-
+            {this.renderButtonFilter()}
             {this.renderListRepository()}
           </div>
         </div>
